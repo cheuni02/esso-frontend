@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'watir-webdriver'
+gem 'selenium-webdriver'
+gem 'webdriver-user-agent'
+gem 'cucumber'
+gem 'require_all'
+gem 'headless'
+gem 'rake'
+gem 'wait_until'
+gem 'rspec-expectations'
+gem 'pry', '~> 0.10.3'

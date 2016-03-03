@@ -1,0 +1,91 @@
+# config/cucumber.yml
+##YAML Template
+---
+
+#mainly: --format CsvFormatter::CsvReport -o report.csv --format json --format pretty --expand --tags @main
+
+esso_regression_uk: -c --tags @EMEA,@esso-uk --expand --format junit -o results/esso_uk --format pretty
+esso_regression_ie: -c --tags @EMEA,@esso-ie --expand --format junit -o results/esso_ie --format pretty
+esso_regression_fr: -c --tags @EMEA,@esso-fr --expand --format junit -o results/esso_fr --format pretty
+esso_regression_de: -c --tags @EMEA,@esso-de --expand --format junit -o results/esso_de --format pretty
+esso_regression_it: -c --tags @EMEA,@esso-it --expand --format junit -o results/esso_it --format pretty
+esso_regression_no: -c --tags @EMEA,@esso-no --expand --format junit -o results/esso_no --format pretty
+esso_regression_nl: -c --tags @EMEA,@esso-nl --expand --format junit -o results/esso_nl --format pretty
+
+# Luxumberg has two specific webpages which can behave differently / have their own module layout
+# So we need to do this one twice. Esso LU-DE will test the core esso-lu + the extra modules specific for de
+esso_regression_lu: -c --tags @EMEA,@esso-lu --expand --format junit -o results/esso_lu --format pretty
+esso_regression_lu_de: -c --tags @EMEA,@esso-lu,@esso-lu-de --expand --format junit -o results/esso_lu_de --format pretty
+
+# Belgium has two specific webpages which can behave differently / have their own module layout
+# So we need to do this one twice. Esso BE-FR will test the core esso-be + the extra modules specific for fr
+esso_regression_be: -c --tags @EMEA,@esso-be --expand --format junit -o results/esso_be --format pretty
+esso_regression_be_fr: -c --tags @EMEA,@esso-be,@esso-be-fr --expand --format junit -o results/esso_be_fr --format pretty
+
+# Cyprus has two specific webpages which can behave differently / have their own module layout
+# So we need to do this one twice. Esso BE-FR will test the core esso-be + the extra modules specific for fr
+esso_regression_cy: -c --tags @EMEA,@esso-cy --expand --format junit -o results/esso_cy --format pretty
+esso_regression_cy_en: -c --tags @EMEA,@esso-cy,@esso-cy-en --expand --format junit -o results/esso_cy_en --format pretty
+
+# use this during unit testing of the scenarios
+wip: --tags @WIP --expand --format pretty
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#all_tests: --tags @all_tests
+#all_homepage_tests: --tags @all_homepage_tests
+#sanity_check:  --tags @sanity_check
+#weather_results: --tags @weather_results
+#nearest_station: --tags @nearest_station
+#competition: --tags @competition
+#driving_conditions: --tags @driving_conditions
+#title_section: --tags @title_section
+#offer_banner_check: --tags @offer_banner_check
+#location_search_negative_tests: --tags @location_search_negative_tests
+#location_search_closest_match: --tags @location_search_closest_match
+#all_petrol_tests: --tags @all_petrol_tests
+#supreme_fuel: --tags @supreme_fuel
+#location_search_negative_tests: --tags @location_search_negative_tests
+#search_by_magnifying_glass_button: --tags @search_by_magnifying_glass_button
+#location_search_positive_tests: --tags @location_search_positive_tests
+#all_station_homepage_tests: --tags @all_station_homepage_tests
+#station_search: --tags @station_search
+#nearest_station_module: --tags @nearest_station_module
+#station_near_me: --tags @station_near_me
+#our_esso_synergy_stations: --tags @our_esso_synergy_stations
+#car_wash: --tags @car_wash
+#sharing_page: --tags @sharing_page
+#all_essodayout_tests: --tags @all_essodayout_tests --expand
+#checking_popup: --tags @checking_popup
+#adding_activities: --tags @adding_activities
+#adding_first_activity: --tags @adding_first_activity
+#adding_second_activity: --tags @adding_second_activity
+#adding_third_activity: --tags @adding_third_activity
+#submitting_form: --tags @submitting_form --expand
+#
+#end_to_end: --tags @end_to_end

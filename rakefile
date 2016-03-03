@@ -1,0 +1,60 @@
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'fileutils'
+=begin
+  **** ESSO LOCALE LISTING ***
+  uk = UK (duh)
+  ie = Ireland
+  it = Italy
+  fr = France
+  de = Germany
+  no = Norway
+  nl = Netherlands
+  be = Belgium
+  cy = Cyprus
+  lu = Luxemburg
+=end
+
+
+namespace :esso_emea do
+
+  desc "Run Esso Regression using Locale List parameter"
+  task :regression_test, [:host, :locale] do |t, args|
+    ENV['HOST'] = args[:host]
+    ENV['LOCALE_BASE'] = 'EMEA'
+    Cucumber::Rake::Task.new(:run) do |task|
+      task.profile = "esso_regression_#{args[:locale]}"
+      #task.profile = "wip"
+    end
+    Rake::Task[:run].invoke()
+  end
+
+end
+
+
+
+#task :esso_days_out, [:host,:env,:tag] do |t, args|
+#  Cucumber::Rake::Task.new(:run) do |t|
+#    ENV['ENV'] = args[:env]
+#    ENV['HOST'] = args[:host]
+#    if args[:tag] == 'all_essodayout_tests'
+#      t.profile = "all_essodayout_tests"
+#    elsif args[:tag] == 'end_to_end'
+#      t.profile = "end_to_end"
+#    elsif args[:tag] == 'checking_popup'
+#      t.profile = "checking_popup"
+#    elsif args[:tag] == 'adding_activities'
+#      t.profile = "adding_activities"
+#    elsif args[:tag] == 'adding_first_activity'
+#      t.profile = "adding_first_activity"
+#    elsif args[:tag] == 'adding_second_activity'
+#      t.profile = "adding_second_activity"
+#    elsif args[:tag] == 'adding_third_activity'
+#      t.profile = "adding_third_activity"
+#    elsif args[:tag] == 'submitting_form'
+#      t.profile = "submitting_form"
+#    end
+#  end
+#  Rake::Task[:run].invoke()
+#end
+#

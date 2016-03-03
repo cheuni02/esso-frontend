@@ -1,0 +1,15 @@
+Then I check the welcome message <welcome_message> is present
+And  The Esso background is loaded
+
+Examples:
+|locale| welcome_message |
+|uk    | Good afternoon  |
+|be    | Goedemiddag     |
+|nl    | Goedemiddag     |
+|lu    | Gudde Mëtteg!   |
+|it    | Buon pomeriggio |
+|de    | Guten Tag       |
+|no    | God ettermiddag |
+|ie    | Good afternoon  |
+|fr    | Bonjour         |
+|cy    | Καλό απόγευμα    |
